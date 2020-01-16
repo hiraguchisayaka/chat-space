@@ -35,16 +35,16 @@ Things you may want to cover:
 |password|string|null: false|
 
 ### Association
-- has_many :groups_users, through: :messages
+- has_many :groups_users, through: :groups
 - has_many :groups_users
-- has_meny :groups
+- has_many :messages
 
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|
+|content|text|
 |image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
@@ -60,13 +60,12 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|null: false|
-|group_id|integer|null: false, foreign_key: true|
 
 
 ### Association
-- has_many  :groups_users, through: :messages
-- has_many  :groups_users
-- belong_to :user
+- has_many :groups_users, through: :users
+- has_many :groups_users
+- has_many :messeages
 
 
 ## groups_usersテーブル
