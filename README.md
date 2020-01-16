@@ -30,12 +30,12 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_name|string|null: false|
+|name|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
 
 ### Association
-- has_many :groups_users, through: :groups
+- has_many :groups, through: :groups_users
 - has_many :groups_users
 - has_many :messages
 
@@ -59,11 +59,11 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|name|string|null: false|
 
 
 ### Association
-- has_many :groups_users, through: :users
+- has_many :users, through: :groups_users
 - has_many :groups_users
 - has_many :messeages
 
