@@ -30,22 +30,22 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|string|null: false|
-|user_id|integer|null: false|
-|group_id|integer|null: false|
+|user_name|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+- has_many :groups_users, through: :messages
+- has_many :groups_users
+- has_meny :groups
 
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|string|null: false|
+|body|text|
+|image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
@@ -60,14 +60,13 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|null: false|
-|user_name|string|null: false|
 |group_id|integer|null: false, foreign_key: true|
 
 
 ### Association
-- has_many   :groups_users, through: :messages
-- belongs_to :group
-
+- has_many  :groups_users, through: :messages
+- has_many  :groups_users
+- belong_to :user
 
 
 ## groups_usersテーブル
