@@ -65,8 +65,8 @@ Things you may want to cover:
 
 
 ### Association
-- has_many   : :groups_users, through: :messages
-- belongs_to : :group
+- has_many   :groups_users, through: :messages
+- belongs_to :group
 
 
 
