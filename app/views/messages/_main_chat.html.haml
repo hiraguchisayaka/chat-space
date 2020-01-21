@@ -1,0 +1,30 @@
+.chat-main
+  .chat-main__group-info
+    .chat-main__group-name
+      group：グループ名
+      .chat-main__group-member
+        Member:メンバーの名前
+    .chat-main__edit-btn
+      =link_to "Edit", "#"
+  .chat-main__message-list
+    .comment-box
+      .user-name
+        ユーザーの名前
+      .send-date
+        このメッセージを送信した日付
+    .text-message
+      コメント
+    .comment-box
+      .user-name
+        ユーザーの名前
+      .send-date
+        このメッセージを送信した日付
+    .text-message
+      コメント
+  .chat-main__message-form
+    .post-box
+      %input.text{type: "text",placeholder: "type a message"}
+      %label.image{class: "post-box__image"}
+        = icon('fas', 'image')
+        %input.file{type: "file"}
+    %input.send-btn{type: "submit", value:"Send"}
