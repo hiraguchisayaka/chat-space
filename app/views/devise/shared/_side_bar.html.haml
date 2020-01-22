@@ -1,11 +1,14 @@
 .side-bar
   .side-bar__header
+      = current_user.name
     .side-bar__header-box
       .current-user-name
         てふてふ
       .icon-box
         %i.fa.fa-edit
         %i.fa.fa-cog
+          =link_to edit_user_path(current.user) do
+            = icon('fas', 'cog', class: 'icon')
   .side-bar__group-list
     .group-name-and-message-box
       %p.group-name グループ名
