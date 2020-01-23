@@ -1,18 +1,18 @@
 .side-bar
   .side-bar__header
-      = current_user.name
-    .side-bar__header-box
-      .current-user-name
-        てふてふ
-      .icon-box
-        %i.fa.fa-edit
-        %i.fa.fa-cog
-          =link_to edit_user_path(current.user) do
-            = icon('fas', 'cog', class: 'icon')
+    .current_user.name
+      .side-bar__header-box
+        .current-user-name
+          てふてふ
+        .icon-box
+          = link_to new_group_path do
+            %i.fa.fa-edit
+          = link_to edit_user_path(current_user.id) do
+            %i.fa.fa-cog
   .side-bar__group-list
-    .group-name-and-message-box
-      %p.group-name グループ名
-      %p.latest-message 最新のメッセージ
-    .group-name-and-message-box
-      %p.group-name グループ名
-      %p.latest-message 最新のメッセージ
+    - current_user.groups.each do |group|
+      .group-name-and-message-box
+        = link_to '#' do
+          %p.group-name
+            = group.name
+          %p.latest-message メッセージはまだありません。
