@@ -7,12 +7,13 @@
         .icon-box
           = link_to new_group_path do
             %i.fa.fa-edit
-          = link_to edit_user_path(current_user.id) do
+          = link_to edit_user_path(current_user) do
             %i.fa.fa-cog
   .side-bar__group-list
     - current_user.groups.each do |group|
       .group-name-and-message-box
-        = link_to '#' do
+        = link_to group_messages_path(group), class: "none" do
           %p.group-name
             = group.name
-          %p.latest-message メッセージはまだありません。
+          %p.latest-message
+            = group.show_last_message

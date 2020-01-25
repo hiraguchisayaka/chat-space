@@ -1,30 +1,21 @@
 .chat-main
   .chat-main__group-info
     .chat-main__group-name
-      group：グループ名
+      = @group.name
       .chat-main__group-member
-        Member:メンバーの名前
+        Member:
+        - @group.users.each do |user|
+          = user.name
     .chat-main__edit-btn
-      =link_to "Edit", "#"
-  .chat-main__message-list
-    .comment-box
-      .user-name
-        ユーザーの名前
-      .send-date
-        このメッセージを送信した日付
-    .text-message
-      コメント
-    .comment-box
-      .user-name
-        ユーザーの名前
-      .send-date
-        このメッセージを送信した日付
-    .text-message
-      コメント
+      =link_to "Edit", edit_group_path(@group)
+  .message-list
+    =render @messages
   .chat-main__message-form
     .post-box
-      %input.text{type: "text",placeholder: "type a message"}
-      %label.image{class: "post-box__image"}
-        = icon('fas', 'image')
-        %input.file{type: "file"}
-    %input.send-btn{type: "submit", value: "Send"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
