@@ -17,5 +17,4 @@
 .byebug_history
 
 
-public/uploads/message/*
-public/uploads/uploads/*
+public/uploads/*
