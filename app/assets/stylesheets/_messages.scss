@@ -115,16 +115,18 @@
       margin-top: 46px;
         &__user-name {
         color: #333333;
-        font-size: 20px;
+        font-size: 16px;
         }
         &__date {
         color:#999999;
         font-size: 12px;
+        margin-left: 10px;
         }
       }
       .lower-message__content {
       color: #434A54;
       font-size: 14px;
+      padding-top: 12px;
       }
         &__image {
         background-color: #d2d2d2;
