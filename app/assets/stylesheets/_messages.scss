@@ -20,6 +20,7 @@
     height: 100px;
     font-size: 16px;
     position: relative;
+    
       &-box {
       height: 20px;
       width: 260px;
@@ -28,7 +29,6 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      margin: auto;
         .current-user-name {
         width: 200px;
         height: 20px;
